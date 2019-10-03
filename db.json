@@ -1,0 +1,13 @@
+{
+  "cart": [
+    { "title": "Shirt", "price": 150, "num": 1 },
+    { "title": "Socks", "price": 50, "num": 2 }
+  ],
+
+  "goods": [
+    { "title": "Shirt", "price": 150, "num": 1 },
+    { "title": "Socks", "price": 50, "num": 2 },
+    { "title": "Jacket", "price": 350, "num": 3 },
+    { "title": "Shoes", "price": 250, "num": 4 }
+  ]
+}
