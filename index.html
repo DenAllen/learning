@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>eShop</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .false{
+            border: red 5px solid;
+        }
+        .true{
+            border: green 5px solid;
+        }
+    </style>
+</head>
+<body>
+<!--<header>
+    <button class="cart-button" type="button">Корзина</button>
+    <div class="count-total"></div>
+</header>
+<main>
+    <div class="goods-list"></div>
+    <div class="cart-main">
+        <div class="goods-total"></div>
+        <div class="cart-blocks goods-list"></div>
+    </div>
+</main>
+<script src="learning.js"></script>-->
+<p class="text">Для Барлеса, как для каждого военного журналиста-ветерана, любая война всегда ассоциировалась с определенной гостиницей. Когда племя специальных корреспондентов достает томагавки и мчится туда, где запахло порохом, встречаясь, они часто узнают друг друга, вспомнив гостиницы, в которых жили бок о бок: 'Ледра палас' на Кипре, 'Коммодоре' и 'Александр' в Бейруте, гостиницы с одинаковым названием 'Интер-континенталь' в Манагуа, Бухаресте и в Аммане, гостиницы 'Хилтон' в Кувейте, 'Чари' в Нджамене, 'Камино Реаль' в Сальвадоре, 'Континенталь' в Сайгоне, 'Шератон' в Буэнос-Айресе, 'Парадор' в Эль-Аюне, 'Дунай' в Вуковаре, 'Мансур' и 'Аль-Рашид' в Багдаде, 'Экспланада' в Загребе, 'Анна Мария' в Медугорье, 'Меридьен' в Дахране, 'Холидей инн' в Сараево и еще много-много других, рассеянных по местам трагедий.
+    <br> конструкция aren't</p>
+<button class="text-button">НАЖМИ МЕНЯ</button>
+
+<form>
+    <input id="Name" type="text" class="text" placeholder="Джон Сноу">
+    <input id="Phone" type="text" placeholder="7(777)777-7777">
+    <input id="Email" type="text" placeholder="mymail@mail.ru">
+    <textarea></textarea>
+    <button class="send">ОТПРАВИТЬ</button>
+</form>
+
+<script>
+    "use strict";
+
+    const str = document.querySelector('.text').textContent;
+    console.log(typeof str);
+    const regexp = /'\B/g;
+    const b = str.replace(regexp, '"');
+    console.log(regexp.test(str));
+    console.log(b);
+
+    const button = document.querySelector('.text-button');
+    button.addEventListener('click', () => {
+        document.querySelector('.text').innerText = b;
+    });
+
+    const validate = document.querySelector('.send');
+
+    function check(name, regName) {
+        if (!regName.test(name.value)) {
+            return name.className = 'false'
+        } else return name.className = 'true'
+    };
+
+    const name = document.getElementById('Name');
+    const phone = document.getElementById('Phone');
+    const email = document.getElementById('Email');
+    name.addEventListener("input", () => {
+        const regName = /[А-Я][а-я]{0,15}\s[А-Я][а-я]{0,15}/
+        check(name, regName)
+    })
+    phone.addEventListener('input', () => {
+        const regPhone = /\d\(\d{3}\)\d{3}-\d{4}/;
+        check(phone, regPhone)
+    })
+    email.addEventListener("input", () => {
+        const regEmail = /[A-z]{1,15}[A-z.\-0-9]{0,15}[A-z]{0,15}@[a-z]{3,15}\.[a-z]{2,14}/
+        check(email, regEmail)
+    })
+</script>
+</body>
+</html>
