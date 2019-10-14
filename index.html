@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+<div id="root">
+    <main>
+        <input v-model="query">
+        <items-list-component :items="filteredItems" @buy="handleBuyClick"></items-list-component>
+        <items-cart-component @countQty="handleBuyClick" @delete="handleDeleteClick" :cart="cart"></items-cart-component>
+        <div class="total">Общая стоимость товаров: {{total}} рублей</div>
+    </main>
+</div>
+<script>
+    const ItemComponent = {
+        props: ['id', 'title', 'price', 'img'],
+        template: `<div class="goods-item">
+          <h3>{{title}}</h3>
+          <img :src="img" class="goods-img">
+          <p>{{price}}</p>
+          <button class="buy" @click="handleBuyClick(id)">Buy</button>
+        </div>`,
+        methods: {
+            handleBuyClick(id) {
+                this.$emit('buy', id);
+            }
+        }
+    };
+
+    const CartItemComponent = {
+        props: ['id', 'title', 'price', 'img', 'qty'],
+        template: `<div class="goods-item">
+        <h3>{{title}}</h3>
+        <img :src="img" class="goods-img">
+        <slot></slot>
+        <button @click="handleDeleteClick(id)">x</button>
+        </div>`,
+        methods: {
+            handleDeleteClick(id) {
+                console.log(id);
+                this.$emit('delete', id);
+            },
+        }
+    };
+
+    const ItemsListComponent = {
+        props: ['items'],
+        template: `<div class="goods-list">
+        <item-component
+          v-if="items.length"
+          v-for="item in items"
+          :key="item.id"
+          :id="item.id"
+          :title="item.title"
+          :price="item.price"
+          :img="item.img"
+          @buy="handleBuyClick(item)"
+        ></item-component>
+        <div v-if="!items.length">
+        Список товаров пуст
+      </div>
+      </div>`,
+        methods: {
+            handleBuyClick(item) {
+                this.$emit('buy', item);
+            }
+
+        },
+        components: {
+            'item-component': ItemComponent,
+        },
+    };
+
+    const CartListComponent = {
+        props: ['cart'],
+        template: `<div class="goods-list">
+        <h3>Корзина</h3><br>
+        <cart-component
+          v-if="cart.length"
+          v-for="item in cart"
+          :key="item.id"
+          :id="item.id"
+          :title="item.title"
+          :qty="item.qty"
+          :img="item.img"
+          @delete="handleDeleteClick(item.id)"
+        ><input class="qty" type="number" v-model="item.qty" @input="patch(item.qty, item.id)"/></cart-component>
+        <div v-if="!cart.length">
+        Корзина пуста
+      </div>
+      </div>`,
+        methods: {
+            handleDeleteClick(id) {
+                console.log(id);
+                this.$emit('delete', id);
+            },
+            patch(qty, id) {
+                if (qty > 0) {fetch(`http://localhost:3000/cart/${id}`, {
+                    method: 'PATCH',
+                    body: JSON.stringify({ qty: qty }),
+                    headers: {
+                        'Content-type': 'application/json',
+                    }
+                }).then(() => {
+                    console.log(qty)
+                });} else {
+                    this.handleDeleteClick(id)
+                }
+
+            }
+        },
+        components: {
+            'cart-component': CartItemComponent,
+        },
+    };
+
+    const app = new Vue({
+        el: '#root',
+        data: {
+            items: [],
+            cart: [],
+            query: '',
+            url: 'http://localhost:3000'
+        },
+        methods: {
+            handleBuyClick(item) {
+                const cartItem = this.cart.find((cartItem) => +cartItem.id === +item.id);
+
+                if (cartItem) {
+                    fetch(`${this.url}/cart/${item.id}`, {
+                        method: 'PATCH',
+                        body: JSON.stringify({ qty: cartItem.qty + 1 }),
+                        headers: {
+                            'Content-type': 'application/json',
+                        }
+                    }).then(() => {
+                        cartItem.qty++;
+                    });
+                } else {
+                    fetch(`${this.url}/cart`, {
+                        method: 'POST',
+                        body: JSON.stringify({ ...item, qty: 1 }),
+                        headers: {
+                            'Content-type': 'application/json',
+                        },
+                    }).then(() => {
+                        this.cart.push({ ...item, qty: 1 });
+                    });
+                }
+            },
+            handleDeleteClick(id) {
+                const cartItem = this.cart.find((cartItem) => +cartItem.id === +id);
+
+                if (cartItem && cartItem.qty > 1) {
+                    fetch(`${this.url}/cart/${id}`, {
+                        method: 'PATCH',
+                        body: JSON.stringify({ qty: cartItem.qty - 1 }),
+                        headers: {
+                            'Content-type': 'application/json',
+                        }
+                    }).then(() => {
+                        cartItem.qty--;
+                    });
+                } else {
+                        fetch(`${this.url}/cart/${id}`, {
+                            method: 'DELETE',
+                        }).then(() => {
+                            this.cart = this.cart.filter((item) => item.id !== id);
+                        });
+                }
+            },
+        },
+        mounted() {
+            fetch(`${this.url}/goods`)
+                .then(response => response.json())
+                .then((goods) => {
+                    this.items = goods;
+                });
+
+            fetch(`${this.url}/cart`)
+                .then(response => response.json())
+                .then((cart) => {
+                    this.cart = cart;
+                });
+        },
+        computed: {
+            total() {
+                return this.cart.reduce((acc, item) => acc + item.qty * item.price, 0);
+            },
+            filteredItems() {
+                return this.items.filter((item) => {
+                    const regexp = new RegExp(this.query, 'i');
+
+                    return regexp.test(item.title);
+                });
+            }
+        },
+        components: {
+            'items-list-component': ItemsListComponent,
+            'items-cart-component': CartListComponent,
+        },
+    });
+</script>
+</body>
+
+</html>
