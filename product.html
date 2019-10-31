@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/36a565db3c.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+</head>
+
+<body>
+<div class="wrapper" id="root">
+    <div class="top">
+    <header class="header-contain main-size">
+        <div class="head-logo">
+            <a href="index.html"><img src="img/Group_2.png" alt="logo"></a>
+            <a href="index.html" class="browse">Bran<span class="browse-pink">d</span></a>
+            <form action="#">
+                <div class="browse-menu-button">Browse<span class="search-span"></span>
+                    <div class="browse-menu">
+                        <div class="browse-menu-list1">
+                            <h4 class="browse-menu-h">Women</h4>
+                            <ul class="browse-menu-ul">
+                                <li class="browse-menu-li"><a href="product.html">Dresses</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Tops</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Sweaters/Knits</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Jackets/Coats</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Blazers</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Denim</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Leggings/Pants</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Skirts/Shorts</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="browse-menu-list2"></div>
+                        <h4 class="browse-menu-h">Men</h4>
+                        <ul class="browse-menu-ul">
+                            <li class="browse-menu-li"><a href="product.html">Tees/Tank tops</a></li>
+                            <li class="browse-menu-li"><a href="product.html">Shirts/Polos</a></li>
+                            <li class="browse-menu-li"><a href="product.html">Sweaters</a></li>
+                            <li class="browse-menu-li"><a href="product.html">Sweatshirts/Hoodies</a></li>
+                            <li class="browse-menu-li"><a href="product.html">Blazers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <input type="text" placeholder='Search for Item...' v-model="query">
+                <input type="submit" value="">
+            </form>
+        </div>
+        <div class="head-right">
+            <a href="cart.html" class="head-right-img"><img src="img/Forma_1.svg" alt="head-right"></a>
+            <div class="pink-buttom">
+                <span class="pink-buttom-text">My Account</span>
+            </div>
+            <div class="mycart">
+                <div class="myprod">
+                    <div class="myprod-incart">
+                        <img src="img/myprod-incart1.jpg" alt="myprod-incart">
+                        <div class="myprod-text">
+                            <h6>Rebox Zane</h6>
+                            <img src="img/little-stars.png" alt="stars">
+                            <p>1&nbsp;&times;&nbsp;$250</p>
+                        </div>
+                        <div class="myprod-button"><i class="fas fa-times-circle"></i></div>
+                    </div>
+                    <div class="myprod-incart"><img src="img/myprod-incart2.jpg" alt="myprod-incart">
+                        <div class="myprod-text">
+                            <h6>Rebox Zane</h6>
+                            <img src="img/little-stars.png" alt="stars">
+                            <p>1&nbsp;&times;&nbsp;$250</p>
+                        </div>
+                        <div class="myprod-button"><i class="fas fa-times-circle"></i></div>
+                    </div>
+                </div>
+                <div class="mytotal">
+                    <div class="mytotal-text">
+                        <p>TOTAL</p>
+                        <p>$500.00</p>
+                    </div>
+                    <a href="checkout.html" class="mytotal-first-button">Checkout</a>
+                    <a href="cart.html" class="mytotal-second-button">Go to cart</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="navigation">
+        <div class="navig-position main-size">
+            <ul class="nav-contain">
+                <li class="nav-list"><a href="index.html" class="nav-list-link">Home</a>
+                    <div class="mega-menu">
+                        <div class="mega-menu-block">
+                            <h4 class="browse-menu-h">Women</h4>
+                            <ul class="browse-menu-ul">
+                                <li class="browse-menu-li"><a href="product.html">Dresses</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Tops</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Sweaters/Knits</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Jackets/Coats</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Blazers</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Denim</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Leggings/Pants</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Skirts/Shorts</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Accessories </a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-block">
+                            <h4 class="browse-menu-h">Women</h4>
+                            <ul class="browse-menu-ul">
+                                <li class="browse-menu-li"><a href="product.html">Dresses</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Tops</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Sweaters/Knits</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Jackets/Coats</a></li>
+                            </ul>
+                            <h4 class="browse-menu-h">Women</h4>
+                            <ul class="browse-menu-ul">
+                                <li class="browse-menu-li"><a href="product.html">Dresses</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Tops</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Sweaters/Knits</a></li>
+                            </ul>
+                        </div>
+                        <div class="mega-menu-block">
+                            <h4 class="browse-menu-h">Women</h4>
+                            <ul class="browse-menu-ul">
+                                <li class="browse-menu-li"><a href="product.html">Dresses</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Tops</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Sweaters/Knits</a></li>
+                                <li class="browse-menu-li"><a href="product.html">Jackets/Coats</a></li>
+                            </ul>
+                            <img src="img/mega-menu-img.jpg" alt="mega-menu-img" class="mega-menu-img">
+                            <div class="super-sale">Super<br>sale!</div>
+                        </div>
+                    </div>
+                </li>
+                <li class="nav-list"><a href="product.html" class="nav-list-link">Man</a></li>
+                <li class="nav-list"><a href="product.html" class="nav-list-link">Women</a></li>
+                <li class="nav-list"><a href="product.html" class="nav-list-link">Kids</a></li>
+                <li class="nav-list"><a href="product.html" class="nav-list-link">Accoseriese</a></li>
+                <li class="nav-list"><a href="product.html" class="nav-list-link">Featured</a></li>
+                <li class="nav-list"><a href="product.html" class="nav-list-link">Hot Deals</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="new-arrivals">
+        <div class="new-arrivals-content main-size">
+            <h4 class="new-arrivals-h">New Arrivals </h4>
+            <div class="new-arrival-group">
+                <a href="index.html" class="new-arrivals-content-a">Home</a><span
+                    class="new-arrivals-content-span">/</span>
+                <a href="product.html" class="new-arrivals-content-a">Men</a><span
+                    class="new-arrivals-content-span">/</span>
+                <a href="#" class="new-arrivals-content-a new-arrivals-content-active">New Arrivals </a>
+            </div>
+        </div>
+    </div>
+    <div class="product-content main-size">
+        <nav class="product-right-nav">
+            <div class="right-nav-select">
+                <h4 class="right-nav-h">Category</h4>
+                <ul class="right-nav-ul">
+                    <li class="right-nav-li"><a href="#">Accessories</a></li>
+                    <li class="right-nav-li"><a href="#">Bags</a></li>
+                    <li class="right-nav-li"><a href="#">Denim</a></li>
+                    <li class="right-nav-li"><a href="#">Hoodies&nbsp;&amp;&nbsp;Sweatshirts</a></li>
+                    <li class="right-nav-li"><a href="#">Jackets&nbsp;&amp;&nbsp;Coats</a></li>
+                    <li class="right-nav-li"><a href="#">Pants</a></li>
+                    <li class="right-nav-li"><a href="#">Polos</a></li>
+                    <li class="right-nav-li"><a href="#">Shirts</a></li>
+                    <li class="right-nav-li"><a href="#">Shoes</a></li>
+                    <li class="right-nav-li"><a href="#">Shorts</a></li>
+                    <li class="right-nav-li"><a href="#">Sweaters&nbsp;&amp;&nbsp;Knits</a></li>
+                    <li class="right-nav-li"><a href="#">T-Shirts</a></li>
+                    <li class="right-nav-li"><a href="#">Tanks</a></li>
+                </ul>
+            </div>
+            <div class="right-nav-select">
+                <h4 class="right-nav-h">BRAND</h4>
+                <ul class="right-nav-ul">
+                    <li class="right-nav-li"></li>
+                    <li class="right-nav-li"></li>
+                </ul>
+            </div>
+            <div class="right-nav-select">
+                <h4 class="right-nav-h">dESIGNER</h4>
+                <ul class="right-nav-ul">
+                    <li class="right-nav-li"></li>
+                    <li class="right-nav-li"></li>
+
+                </ul>
+            </div>
+        </nav>
+        <div class="product-main">
+            <div class="product-form">
+                <div class="product-bar">
+                    <div class="product-trending-content">
+                        <h5 class="product-trending-h">Trending now</h5>
+                        <div class="product-trending">
+                            <div class="product-trending1">
+                                <a href='#' class="product-trending-a">Bohemian</a><span
+                                    class="product-trending-span">|</span>
+                                <a href='#' class="product-trending-a">Floral</a><span
+                                    class="product-trending-span">|</span>
+                                <a href='#' class="product-trending-a">Lace</a><span
+                                    class="product-trending-span">|</span>
+                            </div>
+                            <div class="product-trending1">
+                                <a href='#' class="product-trending-a">Floral</a><span
+                                    class="product-trending-span">|</span>
+                                <a href='#' class="product-trending-a">Lace</a><span
+                                    class="product-trending-span">|</span>
+                                <a href='#' class="product-trending-a">Bohemian</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-size">
+                        <h5 class="product-trending-h">Size</h5>
+                        <div class="product-size1">
+                            <input id='XXS' value="XXS" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="XXS"
+                                                                                                  class="size-label">XXS</label>
+                            <input id='XS' value="XS" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="XS"
+                                                                                                 class="size-label">XS</label>
+                            <input id='S' value="S" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="S"
+                                                                                                class="size-label">S</label>
+                            <input id='M' value="M" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="M"
+                                                                                                class="size-label">M</label>
+                        </div>
+                        <div class="product-size1">
+                            <input id='L' value="L" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="L"
+                                                                                                class="size-label">L</label>
+                            <input id='XL' value="XL" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="XL"
+                                                                                                 class="size-label">XL</label>
+                            <input id='XXL' value="XXL" name='size' type="checkbox" class="size-input" v-model="checkedSize"><label for="XXL"
+                                                                                                  class="size-label">XXL</label>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h5 class="product-trending-h">pRICE</h5>
+                        <form action="#">
+                            <input type="range" min="50" max="400" step="1" value="50" v-model="checkedPrice">
+                            <div class="product-price-text">
+                                <p>$50</p>
+                                <p>${{checkedPrice}}</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="product-show-short">
+                    <label for="Name" class="product-show-label">Sort by</label>
+                    <select name="Sort" id="Name" class="product-show-select">
+                        <option value="Name">Name</option>
+                    </select>
+                    <label for="Show" class="product-show-label">Show</label>
+                    <select name="Show" id="Show" class="product-show-select" v-model="size">
+                        <option>9</option>
+                        <option>18</option>
+                        <option>27</option>
+                    </select>
+                </div>
+            </div>
+            <items-list-component :changed-size="size" :items="filteredItems" @buy="handleBuyClick" @clear="clearFilers" class="products-page"></items-list-component>
+        </div>
+    </div>
+    <div class="product-offers">
+        <div class="content-prod-offers main-size">
+            <article class="product-offers-art">
+                <img src="img/Forma_2.svg" alt="offer-offers">
+                <h4 class="offer-offers-h">Free Delivery</h4>
+                <p class="offer-offers-p">Worldwide delivery on all. Authorit tively morph next-generation innov tion
+                    with extensive models.</p>
+            </article>
+            <article class="product-offers-art">
+                <img src="img/Forma_3.svg" alt="offer-offers">
+                <h4 class="offer-offers-h">Sales&nbsp;&amp;&nbsp;discounts</h4>
+                <p class="offer-offers-p">Worldwide delivery on all. Authorit tively morph next-generation innov tion
+                    with extensive models.</p>
+            </article>
+            <article class="product-offers-art">
+                <img src="img/Forma_4.svg" alt="offer-offers">
+                <h4 class="offer-offers-h">Quality assurance</h4>
+                <p class="offer-offers-p">Worldwide delivery on all. Authorit tively morph next-generation innov tion
+                    with extensive models.</p>
+            </article>
+        </div>
+    </div>
+    <div class="bottom-slider">
+        <div class="bottom-slider-left">
+            <img src="img/Layer_40.png" alt="bottom-slider-left-img" class="bottom-slider-left-img">
+            <div class="bottom-slider-lefttext">
+                <p class="quote">&ldquo;Vestibulum quis porttitor dui! Quisque viverra nunc mi,
+                    a&nbsp;pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium&rdquo;</p>
+                <p class="quote-name"><span class="quote-name-pink"> Bin Burhan</span> <br>Dhaka, Bd</p>
+                <p>
+                    <span class="little-sliders"></span>
+                    <span class="little-sliders-active"></span>
+                    <span class="little-sliders"></span>
+                </p>
+            </div>
+        </div>
+        <div class="bottom-slider-right">
+            <h3 class="bottom-slider-right-h">Subscribe</h3>
+            <p class="bottom-slider-right-p"> FOR OUR NEWLETTER AND PROMOTION</p>
+            <form class="bottom-slider-right-f" action="#">
+                <input type="email" placeholder="Enter Your Email">
+                <input type="submit" class="bottom-slider-right-div" value="Subscribe">
+            </form>
+        </div>
+    </div>
+    <div class="brand main-size">
+        <div class="brand-info">
+            <div class="head-logo head-logo-bottom">
+                <a href="#"><img src="img/Group_2.png" alt="logo"></a>
+                <a href="#" class="browse">Bran<span class="browse-pink">d</span></a>
+            </div>
+            <p class="brand-info-text">Objectively transition extensive data rather than cross functional solutions.
+                Monotonectally syndicate multidisciplinary materials before go forward benefits. Intrinsicly syndicate
+                an expanded array of processes and cross-unit partnerships.</p>
+            <p class="brand-info-text">Efficiently plagiarize 24/365 action items and focused infomediaries.
+                Distinctively seize superior initiatives for wireless technologies. Dynamically optimize.
+            </p>
+        </div>
+        <div class="brand-list">
+            <h4 class="brand-list-h">COMPANY</h4>
+            <ul class="brand-list-ul">
+                <li class="brand-list-li"><a class="brand-list-li-a" href="index.html">Home</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="product.html">Shop</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">About</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">How It Works</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="brand-list">
+            <h4 class="brand-list-h">INFORMATION</h4>
+            <ul class="brand-list-ul">
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">Tearms&nbsp;&amp;&nbsp;Condition</a>
+                </li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">Privacy Policy</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">How to Buy</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">How to Sell</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="checkout.html">Promotion</a></li>
+            </ul>
+        </div>
+        <div class="brand-list">
+            <h4 class="brand-list-h">SHOP CATEGORY</h4>
+            <ul class="brand-list-ul">
+                <li class="brand-list-li"><a class="brand-list-li-a" href="product.html">Men</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="product.html">Women</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="product.html">Child</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="product.html">Apparel</a></li>
+                <li class="brand-list-li"><a class="brand-list-li-a" href="product.html">Brows All</a></li>
+            </ul>
+        </div>
+    </div>
+    </div>
+    <footer class="footer">
+        <div class="footer-block">
+            <div class="copyright">&copy;&nbsp;2017&nbsp;Brand&nbsp;All&nbsp;Rights&nbsp;Reserved.</div>
+            <div class="social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-google-plus-g"></i></a>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="js/catalog.js"></script>
+</body>
+
+</html>
+

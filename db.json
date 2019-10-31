@@ -1,0 +1,363 @@
+{
+  "catalog": [
+    {
+      "id": 1,
+      "name": "Jacket",
+      "color": "black",
+      "size": [
+        "XXS",
+        "XS",
+        "XL",
+        "XL"
+      ],
+      "picture": "img/products/prod1.jpg",
+      "price": 199,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 2,
+      "name": "Coat",
+      "color": "black",
+      "size": [
+        "XXS",
+        "XS",
+        "XL",
+        "XL",
+        "L"
+      ],
+      "picture": "img/products/prod2.jpg",
+      "price": 300,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 3,
+      "name": "Jacket",
+      "color": "blue",
+      "size": [
+        "XXS",
+        "XS"
+      ],
+      "picture": "img/products/prod3.jpg",
+      "price": 400,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 4,
+      "name": "T-Shirt",
+      "color": "grey",
+      "size": [
+        "XXS",
+        "XS",
+        "XL",
+        "XL",
+        "M",
+        "XXL"
+      ],
+      "picture": "img/products/prod4.jpg",
+      "price": 100,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 5,
+      "name": "Jacket",
+      "color": "blue",
+      "size": [
+        "XXS",
+        "XS",
+        "L",
+        "XL",
+        "XL"
+      ],
+      "picture": "img/products/prod5.jpg",
+      "price": 310,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 6,
+      "name": "Jacket",
+      "color": "black",
+      "size": [
+        "XXS",
+        "XS",
+        "M",
+        "L"
+      ],
+      "picture": "img/products/prod6.jpg",
+      "price": 150,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 7,
+      "name": "Jacket",
+      "color": "grey",
+      "size": [
+        "XL"
+      ],
+      "picture": "img/products/prod7.jpg",
+      "price": 300,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 8,
+      "name": "Jacket",
+      "color": "black",
+      "size": [
+        "XXS",
+        "S",
+        "XS",
+        "XL",
+        "XL",
+        "L",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod8.jpg",
+      "price": 310,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 9,
+      "name": "T-Shirt",
+      "color": "blue",
+      "size": [
+        "XXS",
+        "S",
+        "XS",
+        "XL",
+        "XL",
+        "L",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod9.jpg",
+      "price": 50,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 10,
+      "name": "Pants",
+      "color": "black",
+      "size": [
+        "XL",
+        "XL",
+        "L",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod10.jpg",
+      "price": 150,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 11,
+      "name": "Shirt",
+      "color": "black",
+      "size": [
+        "XXS",
+        "S",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod11.jpg",
+      "price": 100,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 12,
+      "name": "Shirt",
+      "color": "yellow",
+      "size": [
+        "XXS",
+        "S",
+        "XS",
+        "XL"
+      ],
+      "picture": "img/products/prod12.jpg",
+      "price": "150",
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 13,
+      "name": "Polo",
+      "color": "grey",
+      "size": [
+        "XL",
+        "L",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod13.jpg",
+      "price": 150,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 14,
+      "name": "T-Shirt",
+      "color": "green",
+      "size": [
+        "XXS",
+        "S",
+        "XS",
+        "XL",
+        "XXl"
+      ],
+      "picture": "img/products/prod14.jpg",
+      "price": 70,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 15,
+      "name": "Denim",
+      "color": "black",
+      "size": [
+        "XL",
+        "XL",
+        "L",
+        "M"
+      ],
+      "picture": "img/products/prod15.jpg",
+      "price": 200,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 16,
+      "name": "Shirt",
+      "color": "white",
+      "size": [
+        "XXS",
+        "XS",
+        "XL",
+        "XL"
+      ],
+      "picture": "img/products/prod16.jpg",
+      "price": 60,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 17,
+      "name": "Jacket",
+      "color": "black",
+      "size": [
+        "XXS",
+        "XL",
+        "XL",
+        "L",
+        "M"
+      ],
+      "picture": "img/products/prod17.jpg",
+      "price": "150",
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 18,
+      "name": "T-Shirt",
+      "color": "white",
+      "size": [
+        "XXS",
+        "S",
+        "XS",
+        "XL",
+        "XL",
+        "L",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod18.jpg",
+      "price": 90,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 19,
+      "name": "Pants",
+      "color": "yellow",
+      "size": [
+        "XXS",
+        "XS",
+        "XL",
+        "XL"
+      ],
+      "picture": "img/products/prod19.jpg",
+      "price": 300,
+      "shipping": "FREE",
+      "subTotal": 0
+    },
+    {
+      "id": 20,
+      "name": "Shirt",
+      "color": "pink",
+      "size": [
+        "XXS",
+        "S",
+        "XS",
+        "XL",
+        "XL",
+        "L",
+        "M",
+        "XXl"
+      ],
+      "picture": "img/products/prod18.jpg",
+      "price": 100,
+      "shipping": "FREE",
+      "subTotal": 0
+    }
+  ],
+  "cart": [
+    {
+      "id": 17,
+      "name": "Jacket",
+      "color": "black",
+      "size": "XXS",
+      "picture": "img/products/prod17.jpg",
+      "price": "150",
+      "shipping": "FREE",
+      "subTotal": 0,
+      "qty": "4"
+    },
+    {
+      "id": 9,
+      "name": "T-Shirt",
+      "color": "blue",
+      "size": "XL",
+      "picture": "img/products/prod9.jpg",
+      "price": 50,
+      "shipping": "FREE",
+      "subTotal": 0,
+      "qty": 5
+    }
+  ],
+  "page": {
+    "item": {
+      "id": 1,
+      "name": "Jacket",
+      "color": "black",
+      "size": [
+        "XXS",
+        "XS",
+        "XL",
+        "XL"
+      ],
+      "picture": "img/products/prod1.jpg",
+      "price": 199,
+      "shipping": "FREE",
+      "subTotal": 0
+    }
+  }
+}
